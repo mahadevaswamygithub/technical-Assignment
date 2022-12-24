@@ -1,0 +1,16 @@
+function getElementById(className) {
+    const result = [];
+    
+    function getEachIDNode(node) {
+        if(node.contains(className)) {
+            return node;
+        }
+
+        for(let i=0; i<node.childNodes.length; i++) {
+            getEachIDNode(node.childNodes[i]);
+        }
+
+    }
+
+    getEachIDNode(document.body);
+}
